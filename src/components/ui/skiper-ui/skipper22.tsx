@@ -11,9 +11,9 @@ import {
 import { FaDatabase, FaCode, FaProjectDiagram, FaRobot, FaAtom, FaChartBar, FaVideo, FaPenNib, FaArrowRight, FaArrowLeft, FaGraduationCap, FaEnvelope } from "react-icons/fa";
 import { Carousel_003 } from "./skiper49";
 import { Link001 } from "./skiper40";
-import forkCastVid from "../media/1782572789363541.mp4";
-import auraVid from "../media/ai companion.mp4";
-import devdnaVid from "../media/devdna.mov";
+// import forkCastVid from "../media/1782572789363541.mp4";
+// import auraVid from "../media/ai companion.mp4";
+// import devdnaVid from "../media/devdna.mov";
 
 const roboto: React.CSSProperties = {
   fontFamily: '"Roboto", sans-serif',
@@ -340,21 +340,21 @@ const Skipper22 = ({ children }: { children?: React.ReactNode }) => {
                     items={[
                       {
                         title: "ForkCast",
-                        video: forkCastVid,
+                        video: "https://res.cloudinary.com/dp1ezxjle/video/upload/v1782612894/compresed_forckast_fsrmxn.mp4",
                         description: 'A full-stack recipe discovery platform that turns "what can I cook with what I have" into a real answer — built with React, Firebase Auth, and Supabase, powered by the Spoonacular API.',
                         link: "https://react-mini-project-livid.vercel.app/",
                         github: "https://github.com/kushal-sw/Fork-cast"
                       },
                       {
                         title: "DevDNA",
-                        video: devdnaVid,
+                        video: "https://player.cloudinary.com/embed/?cloud_name=dp1ezxjle&public_id=Screen_Recording_2026-06-28_at_12.35.54_AM_x4hfu6&autoplay=true&loop=true&muted=true&controls=false",
                         description: "Local-first AI coding assistant that learns your codebase. A CLI-based coding assistant built in Python that runs entirely on-device using Ollama, with ChromaDB for semantic code search and Tree-sitter for syntax-aware parsing. No API calls, no data leaving your machine.",
                         link: null,
                         github: "https://github.com/kushal-sw/dev-dna"
                       },
                       {
                         title: "Aura",
-                        video: auraVid,
+                        video: "https://res.cloudinary.com/dp1ezxjle/video/upload/v1782612321/1782587856931377_xyzppw.mp4",
                         description: "A local AI companion with a voice and a face. A desktop AI companion app built with Electron, React, and Three.js, running entirely offline. Uses a local LLM for conversation, Whisper for speech recognition, and Coqui XTTS-v2 for voice synthesis.",
                         link: null,
                         github: "https://github.com/kushal-sw/ai-companion"
@@ -376,7 +376,16 @@ const Skipper22 = ({ children }: { children?: React.ReactNode }) => {
                           
                           <div className="w-full aspect-video rounded-xl overflow-hidden border border-[#1F3A4B10] bg-[#1F3A4B05]">
                             {project.video ? (
-                              <video src={project.video} autoPlay loop muted playsInline className="w-full h-full object-cover" />
+                              project.video.includes("cloudinary.com/embed") ? (
+                                <iframe 
+                                  src={project.video} 
+                                  className="w-full h-full border-none pointer-events-none"
+                                  allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                                  allowFullScreen
+                                ></iframe>
+                              ) : (
+                                <video src={project.video} autoPlay loop muted playsInline className="w-full h-full object-cover" />
+                              )
                             ) : (
                               <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
                             )}

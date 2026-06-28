@@ -3,7 +3,7 @@ import kushalImg from "./ui/media/kushal.jpg";
 import { GitHubCalendar } from 'react-github-calendar';
 import { FaLinkedin, FaGithub, FaInstagram, FaYoutube, FaDownload, FaEnvelope } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import resumeFile from "./ui/media/Kushal Swargam CV.pdf";
+// import resumeFile from "./ui/media/Kushal Swargam CV.pdf";
 
 const roboto: React.CSSProperties = {
   fontFamily: '"Roboto", sans-serif',
@@ -113,7 +113,7 @@ export default function AboutSection() {
               </h4>
               <div className="flex flex-wrap gap-3">
                 {[
-                  { name: "Resume", icon: FaDownload, url: resumeFile, isDownload: true },
+                  { name: "Resume", icon: FaDownload, url: "#", isDownload: true },
                   { name: "LinkedIn", icon: FaLinkedin, url: "https://www.linkedin.com/in/kushal-swargam-74b597372/" },
                   { name: "Gmail", icon: FaEnvelope, url: "mailto:kushalswargam484@gmail.com" },
                   { name: "GitHub", icon: FaGithub, url: "https://github.com/kushal-sw" },
